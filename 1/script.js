@@ -1,5 +1,9 @@
-    window.EJS_player   = '#game';
-    window.EJS_gameUrl  = 'rom.sfc';
-    window.EJS_core     = 'snes';
-    window.EJS_mouse    = false;
-    window.EJS_multitap = false;
+window.addEventListener("load", () => {
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    const container = document.getElementById("game");
+    container.appendChild(player);
+    player.style.width = "100%";
+    player.style.height = "100%";
+    player.load("data.swf");
+});
